@@ -14,6 +14,9 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY package*.json ./
 COPY src/ ./src/
 
+# Create the uploads directory and give ownership to the node user
+RUN mkdir -p /app/data/uploads && chown -R node:node /app/data
+
 USER node
 EXPOSE 5001
 

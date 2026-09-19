@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { env } from '../config/env.js';
 
-const ML_BASE_URL = env.ML_SERVICE_URL || 'http://localhost:8000';
+const ML_BASE_URL = env.mlServiceUrl || 'http://localhost:8000';
 
 class MLClient {
   constructor(baseUrl = ML_BASE_URL) {
