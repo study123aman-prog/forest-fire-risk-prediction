@@ -21,7 +21,7 @@ export function getEnvironment() {
     mongoUri: process.env.MONGODB_URI ?? "mongodb://localhost:27017/fireguard_ai",
     useInMemoryDb: process.env.USE_IN_MEMORY_DB === "true",
     jwtSecret: process.env.JWT_SECRET ?? "fireguard-ai-development-jwt-secret-key-32chars",
-    mlServiceUrl: process.env.ML_SERVICE_URL ?? "http://127.0.0.1:8000",
+    mlServiceUrl: process.env.ML_SERVICE_URL || "http://localhost:8000",
     frontendOrigin: process.env.FRONTEND_ORIGIN
       ? (process.env.FRONTEND_ORIGIN.includes(",")
           ? process.env.FRONTEND_ORIGIN.split(",").map((s) => s.trim())
